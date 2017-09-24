@@ -3,7 +3,6 @@ var utils = {
     digestReport: function(doc) {
         if (doc.USER_CRASH_DATE) {
             var value = {
-                user_crash_date: doc.USER_CRASH_DATE,
                 android_version: doc.ANDROID_VERSION,
                 application_version_name: doc.APP_VERSION_NAME,
                 application_package: doc.APPLICATION_PACKAGE
