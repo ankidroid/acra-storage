@@ -8,8 +8,12 @@ function(newDoc, oldDoc, userCtx) {
 		throw({"unauthorized": "You may only post reports with reporter, _admin or _writer role "});
 	}
 
+    // Problem: Build.VERSION.RELEASE - "Do not assume that its value has any
+    // particular structure or that values of RELEASE from different releases
+    // can be somehow ordered."
+    // (https://developer.android.com/reference/android/os/Build.VERSION.html#RELEASE)
     if(newDoc.ANDROID_VERSION) {
-        var androidVersionParts = newDoc.ANDROID_VERSION.split('.');
+        var androidVersionParts = newDoc.ANDROID_VERSION.toString().split('.');
         if (androidVersionParts.length > 1 && androidVersionParts[0] < MIN_ANDROID_MAJOR) {
             throw({"forbidden": "Reports from Android version less than " + MIN_ANDROID_MAJOR + " are no longer allowed."});
         }
