@@ -7,6 +7,6 @@ function(newDoc, oldDoc, userCtx) {
 	}
 
     if(newDoc.APP_VERSION_CODE && newDoc.APP_VERSION_CODE < MIN_APP_VERSION_CODE) {
-        throw({"forbidden": "Reports from application version code lesser than " + MIN_APP_VERSION_CODE + " are not allowed anymore."});
+        throw({"forbidden": "Reports from application version code less than " + MIN_APP_VERSION_CODE + " are not allowed anymore."});
     }
 }
