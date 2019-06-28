@@ -1,6 +1,6 @@
 function(newDoc, oldDoc, userCtx) {
 
-    var MIN_APP_VERSION_CODE = 0;
+    var MIN_APP_VERSION_CODE = 20804300;
 
     if(userCtx.roles.indexOf("_admin") < 0 && userCtx.roles.indexOf("reporter") < 0 && userCtx.roles.indexOf("_writer") < 0) {
 		throw({"unauthorized": "You may only post reports with reporter, _admin or _writer role "});
